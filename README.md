@@ -18,3 +18,10 @@ This is my another project that mean to get comic info from api which is provide
 
 If you are interest in this project and found improvement from my code, you are welcome to contribute to this project.
 
+# Build
+
+```bash
+git clone https://github.com/Avimitin/GoExFetcher.git
+cd ./GoExFetcher/cmd/cli
+go build
+```
