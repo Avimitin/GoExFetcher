@@ -17,7 +17,7 @@ type GMetaData struct {
 	Rating       string   `json:"rating"`
 	Torrentcount string   `json:"torrentcount"`
 	Tags         []string `json:"tags"`
-	Err string `json:"error"`
+	Err          string   `json:"error"`
 }
 
 // G is the response struct
@@ -34,6 +34,10 @@ type GData struct {
 
 // InvalidKeyError is error message when an invalid key provided.
 type InvalidKeyError struct {
-	Gid   int    `json:"gid"`
-	Error string `json:"error"`
+	Gid       string
+	ErrorInfo string
+}
+
+func (i *InvalidKeyError) Error() string {
+	return i.ErrorInfo
 }
