@@ -8,9 +8,9 @@ This is my another project that mean to get comic info from api which is provide
 
 - [x] Fetching Data
 - [x] Parsing Data
-- [ ] Support multi query
-- [ ] Support cli
-- [ ] Support args input
+- [x] Support multi query
+- [x] Support cli
+- [x] Support args input
 - [ ] Support goroutine
 - [ ] Support proxy
 
