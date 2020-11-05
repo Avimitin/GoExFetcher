@@ -20,8 +20,10 @@ If you are interest in this project and found improvement from my code, you are 
 
 # Build
 
+Download and install go before build.
+
 ```bash
 git clone https://github.com/Avimitin/GoExFetcher.git
-cd ./GoExFetcher/cmd/cli
-go build
+cd ./GoExFetcher/
+make build
 ```
