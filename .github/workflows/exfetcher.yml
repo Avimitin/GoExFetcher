@@ -1,0 +1,16 @@
+name: exfetcher
+on:
+    push:
+        branches: [ master ]
+
+jobs:
+    ExfetcherTest:
+        name: exfetcher-test
+        runs-on: ubuntu-20.04
+        steps:
+            - uses: actions/checkout@master
+            - uses: actions/setup-go@master
+              with:
+                  go-version: "1.15.3"
+            - run: go get -v -t -d ./...
+            - run: go test -v ./...
