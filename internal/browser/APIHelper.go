@@ -26,26 +26,6 @@ func NewHTTPClient() *http.Client {
 	}
 }
 
-// NewGData generate gdata for post message.
-// Require manga's id and token, return a parsed json byte message.
-// Exp:
-// With a link like this: https://e-hentai.org/g/618395/0439fa3666/
-// it's id is 618396 and it's token is 0439fa3666
-func NewGData(id string, token string) ([]byte, error) {
-	gl := [][]string{{id, token}}
-	gd := GData{
-		Method:    "gdata",
-		GidList:   gl,
-		NameSpace: 1,
-	}
-	g, err := json.Marshal(gd)
-	if err == nil {
-		return g, nil
-	}
-	log.Printf("Error occur when parsing posted data, INFO: %v\n", err)
-	return nil, err
-}
-
 // Reg will use pattern to fetch id and token in user's input
 func Reg(url string) string {
 	pattern := regexp.MustCompile(`\d+/\w+`)
