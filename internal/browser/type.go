@@ -32,6 +32,19 @@ type GData struct {
 	NameSpace int        `json:"namespace"`
 }
 
+// NewGData generate gdata for post message.
+func NewGData(ns int) *GData {
+	return &GData{
+		Method:    "gdata",
+		NameSpace: ns,
+	}
+}
+
+// SetComic append comic into GData
+func (gd *GData) SetComic(id string, token string) {
+	gd.GidList = append(gd.GidList, []string{id, token})
+}
+
 // InvalidKeyError is error message when an invalid key provided.
 type InvalidKeyError struct {
 	Gid       string
