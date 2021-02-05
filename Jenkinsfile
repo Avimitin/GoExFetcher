@@ -34,7 +34,7 @@ pipeline {
 
 		stage('Archive') {
 			steps {
-				archiveArtifacts 'bin/*.tar.gz'
+				archiveArtifacts '*.tar.gz'
 			}
 		}
 	}
