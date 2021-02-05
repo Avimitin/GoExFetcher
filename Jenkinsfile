@@ -6,19 +6,19 @@ pipeline {
 	}
 	stages{
 		stage('Setup') {
-			step{
+			steps{
 				sh 'go get ./...'
 			}
 		}
 
 		stage('Test') {
-			step {
+			steps {
 				sh 'go test -v ./...'
 			}
 		}
 
 		stage('Build') {
-			step{
+			steps{
 				sh 'echo "building"'
 				sh '''
 				go build -ldflags '-w -s' -o bin/osuAPI-linux-amd64
