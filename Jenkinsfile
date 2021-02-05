@@ -26,7 +26,7 @@ pipeline {
 			steps{
 				sh 'echo "building"'
 				sh '''
-				go build -ldflags '-w -s' -o bin/go-exfetcher cmd/cli/main.go
+				go build -ldflags "-w -s" -o bin/go-exfetcher cmd/cli/main.go
 				tar -C bin -zcvf go-exfetcher-linux-amd64.tar.gz go-exfetcher
 				'''
 			}
