@@ -26,9 +26,15 @@ pipeline {
 			steps{
 				sh 'echo "building"'
 				sh '''
-				go build -ldflags '-w -s' -o bin/osuAPI-linux-amd64
-				tar -C bin -zcvf osuAPI-linux-amd64.tar.gz osuAPI
+				go build -ldflags '-w -s' -o bin/go-exfetcher cmd/cli/main.go
+				tar -C bin -zcvf go-exfetcher-linux-amd64.tar.gz go-exfetcher
 				'''
+			}
+		}
+
+		stage('Archive') {
+			steps {
+				archiveArtifacts 'bin/*.tar.gz'
 			}
 		}
 	}
